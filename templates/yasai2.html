@@ -1,32 +1,35 @@
-<!DOCTYPE html>
+<!DOCTYPE html><!--半角の！を入力するとタブキーを押すだけでHTMLが出力される-->
 <html lang="ja"><!--日本語-->
-<head>
-    <meta charset="UTF-8">
+<head><!--タグ。タグに囲まれたものを要素という-->
+    <meta charset="UTF-8"><!--指定しないと文字化けの原因になる-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Vegetables Classifier</title>
-    <link rel="stylesheet" href="../static/yasai3.css"><!--ファイルの位置-->
+    <!--CSSの読み込み部分は自動保管されないので書き加える必要がある-->
+    <link rel="stylesheet" href="../static/yasai3.css"><!--cssファイルの場所と名前を読み込む-->
 </head>
 
 <body>
-    <header>   
-        <alt="Aidemy">
-        <a class="header-logo" href="#">Vegetables Classifier</a>
+    <header>
+        <!--画像を入れたいときはimg要素を使います。srcに画像のURLを指定しsrc="https:"でURLを入力。これで表示できない場合はalt="Aidemy"をプラスする-->   
+            <img class="footer_img" src="https://aidemyexstorage.blob.core.windows.net/aidemycontents/1621500180546399.png" alt="Aidemy">
+        <a class="header-logo" href="#">Vegetables Classifier</a><!--class="xxx"とするとcssで扱いやすくなる-->
     </header>
 
     <div class="main">  
         <h2> AIが送信された丸い野菜の画像を識別します</h2>
          <h3> (きゃべつ じゃがいも とまと たまねぎ かぼちゃ)</h3>
-        <p>画像を送信してください</p>
-        <form method="POST" enctype="multipart/form-data">
-            <input class="file_choose" type="file" name="file">
+        <p>画像を送信してください</p><!--基本文章を入力する際に使用。パラグラフのP。改行には<br>を使用-->
+        <form method="POST" enctype="multipart/form-data"><!--request.methodに"POST"が渡され画像をアップロードする-->
+            <input class="file_choose" type="file" name="file"><!--name="file"はrequest.filesに渡されている-->
             <input class="btn" value="送信" type="submit">
         </form>
-         <div class="answer">{{answer}}</div>
+         <div class="answer">{{answer}}</div>><!--.pyの52行目pred_answerが代入される-->
     </div>
 
 
     <footer>
+        <img class="footer_img" src="https://aidemyexstorage.blob.core.windows.net/aidemycontents/1621500180546399.png" alt="Aidemy">
         <small>&copy; 2024 SHOJI aidemy</small>   
     </footer>
 </body>
