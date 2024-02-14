@@ -9,7 +9,7 @@ import numpy as np
 
 classes = ['きゃべつ','じゃがいも','とまと','たまねぎ','かぼちゃ']#表示する回答
 #モデルで指定したサイズと同じにする
-image_size = 80
+image_size = 100
 
 
 UPLOAD_FOLDER = "uploads"
@@ -49,8 +49,7 @@ def upload_file():
 
             return render_template("yasai2.html",answer=pred_answer)
 
-    return render_template("yasai2.html",answer=pred_answer)
-
+    return render_template("yasai2.html",answer="")
 
 if __name__ == "__main__":
     port = int(os.environ.get('PORT', 8080))
